@@ -76,6 +76,28 @@ if __name__ == "__main__":
     main(["#LFC", "#Liverpool", "#YNWA"])
 ```
 
+## Deploying to Heroku
+
+To deploy the Twitter bot to Heroku, follow these steps:
+
+1. Create a new Heroku app either through the Heroku website or using the Heroku CLI.
+2. Set the required environment variables (`consumer_key`, `consumer_secret`, `access_token`, and `access_token_secret`) in your Heroku app's settings.
+3. Push the code to your Heroku app's repository:
+
+   ```bash
+   git push heroku main
+   ```
+
+4. Scale up the worker dyno:
+
+   ```bash
+   heroku ps:scale worker=1
+   ```
+
+Your bot will now be deployed on Heroku and start retweeting tweets with the specified keywords.
+
+**Note:** Make sure your Heroku account is verified to use the worker dyno.
+
 ## License
 
 [Include license information for your project, if applicable.]
